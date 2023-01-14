@@ -3,27 +3,3 @@
 // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
-
-const firstInputNumber = 1;
-const secondInputNumber = 2;
-const maxNumber = 40;
-
-let firstStartNumber = firstInputNumber;
-let secondStartNumber = secondInputNumber;
-let newNumber;
-let total = 0;
-
-if (firstStartNumber % 2 === 0) {
-    total += firstStartNumber;
-};
-
-if (secondStartNumber % 2 === 0) {
-    total += secondStartNumber;
-}
-
-for (let i = firstInputNumber; i < maxNumber; i += 1) {
-    
-}
-
-
-console.log(total);
