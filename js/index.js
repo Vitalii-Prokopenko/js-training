@@ -1,3 +1,45 @@
+/* === MENTOR === */
+// Шпаргалка з оголошення функцій у JS:
+
+// Функціональний вираз
+//   (function expression)
+// const greet = function (name) {
+//  return `Hello, ${name}`;
+// };
+
+// Оголошення функції
+//   (function declaration)
+// function greet(name) {
+//  return `Hello, ${name}!`;
+// }
+
+/* === LIFEHACKS === */
+
+// Декілька лайфхаків при роботі з масивами.
+
+// Як швидко очистити масив
+
+// const fruits = ['banana', 'apple', 'orange', 'watermelon', 'apple', 'orange', 'grape', 'apple'];
+// fruits.length = 0;
+// console.log(fruits); // поверне []
+
+// Як об’єднати більше двох масивів
+
+// const fruits = ['apple', 'banana', 'orange'];
+// const meat = ['poultry', 'beef', 'fish'];
+// const vegetables = ['potato', 'tomato', 'cucumber'];
+// const food = [...fruits, ...meat, ...vegetables];
+// console.log(food); // поверне ["apple", "banana", "orange", "poultry", "beef", "fish", "potato", "tomato", "cucumber"]
+
+// Як отримати рандомне значення масиву
+
+// const fruits = [ 'banana', 'apple', 'orange', 'watermelon', 'apple', 'orange', 'grape', 'apple', ];
+// const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+// console.log(randomFruit); // поверне рандомний фрукт із масиву
+
+/* === EXERCISES === */
+
+// ==============================================
 // #1 Числа, кратні 3 чи 5
 // Якщо виписати всі натуральні числа менше 10, кратні 3 чи 5, то отримаємо 3, 5, 6 та 9. Сума цих чисел дорівнює 23.
 // Знайдіть суму всіх чисел менше 1000, кратних 3 чи 5.
@@ -92,7 +134,7 @@
 // Сума простих чисел менша за 10 дорівнює 2 + 3 + 5 + 7 = 17.
 // Знайдіть суму всіх простих чисел менше двох мільйонів.
 
-// ============================================
+// ++++++++++++++++++++++++++++++++++++++++++++++
 
 // A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
 // Your task is to write a function that takes a string and return a new string with all vowels removed.
@@ -131,24 +173,24 @@
 // console.log(newString);
 
 // ===== Solution 2
-function disemvowel(str) {
-  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+// function disemvowel(str) {
+//   const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 
-  const strLetters = str.split("");
-  console.log(strLetters);
+//   const strLetters = str.split("");
+//   console.log(strLetters);
 
-  let strNew = [];
+//   let strNew = [];
 
-  for (let i = 0; i < strLetters.length; i += 1) {
-    let letter = strLetters[i];
+//   for (let i = 0; i < strLetters.length; i += 1) {
+//     let letter = strLetters[i];
 
-    if (!vowels.includes(letter)) {
-      strNew.push(letter);
-    }
-  }
-  strNew = strNew.join("");
-  return strNew;
-}
+//     if (!vowels.includes(letter)) {
+//       strNew.push(letter);
+//     }
+//   }
+//   strNew = strNew.join("");
+//   return strNew;
+// }
 
-let newString = disemvowel(`This website is for losers LOL!`);
-console.log(newString);
+// let newString = disemvowel(`This website is for losers LOL!`);
+// console.log(newString);
