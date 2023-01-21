@@ -194,3 +194,254 @@
 
 // let newString = disemvowel(`This website is for losers LOL!`);
 // console.log(newString);
+
+// ======= Вебінар 21/01/2023 ==================
+// ==== #1 ====
+// Напишіть код, який запитуватиме логін за допомогою prompt і буде виводити результат в консоль браузера
+
+// Якщо користувач вводить "Admin",  то prompt запитує пароль.
+// Якщо нічого не ввели або натиснута клавіша Esc вивести рядок "Cancel"
+// Інакше вивести рядок "I don't know you"
+
+//Пароль перевіряти так:
+// Якщо введено пароль "I am admin", то вивести рядок "Hello!"
+// інакше виводити рядок "Wrong password!"
+
+// const login = prompt("Type your login");
+// switch (login) {
+//   case "admin":
+//     const password = prompt("Type your password");
+//     if (password === "I am admin") {
+//       console.log("Hello!");
+//     } else {
+//       console.log("Wrong password!");
+//     }
+//     break;
+//   case "":
+//   case null:
+//     console.log("Cancel");
+//     break;
+//   default:
+//     console.log("I do not know");
+// }
+
+// ==== #2 ====
+
+// Напишіть через світч пошук автора мови програмування
+// Пишемо назву мови у шаблонному рядку отримує відповідь: мова та автор
+// PHP Расмус Лердорф
+// C# група інженерів компанії Microsoft під керівництвом Андерса Хейлсберга та Скотта Вільтаумота
+// Swift Кріс Латтнер
+// JS Брендан Ейх
+// Java Джеймс Гослінг
+// Python Гвідо ван Россум
+
+// const language = prompt("Type programming language");
+
+// switch (language.toLowerCase()) {
+//   case "php":
+//     console.log("PHP Расмус Лердорф");
+//     break;
+//   case "c#":
+//     console.log(
+//       "C# група інженерів компанії Microsoft під керівництвом Андерса Хейлсберга та Скотта Вільтаумота"
+//     );
+//     break;
+//   case "swift":
+//     console.log("Swift Кріс Латтнер");
+//     break;
+//   case "js":
+//     console.log("JS Брендан Ейх");
+//     break;
+//   case "java":
+//     console.log("Java Джеймс Гослінг");
+//     break;
+//   case "python":
+//     console.log("Python Гвідо ван Россум");
+//     break;
+//   default:
+//     console.log("there is no language with such a name");
+// }
+
+// ==== #3 ====
+// Напишіть через світч калькулятор
+// Потрібно ввести перше число в prompt, потім математичну операцію
+// Тоді ввести наступне число
+
+// const number1 = Number(prompt("Enter first number"));
+// const operation = prompt("Enter operation (+, -, *, /)");
+// const number2 = Number(prompt("Enter second number"));
+
+// switch (operation) {
+//   case "+":
+//     console.log(number1 + number2);
+//     break;
+//   case "-":
+//     console.log(number1 - number2);
+//     break;
+//   case "*":
+//     console.log(number1 * number2);
+//     break;
+//   case "/":
+//     console.log(number1 / number2);
+//     break;
+//   default:
+//     console.log("wrong operation!");
+// }
+
+// ==== #4 ====
+//Напишіть цикл, який виводить у консоль
+//1. числа від max до min за спаданням
+//2. Виведіть у консоль усіх парні числа від min до max
+//3. За допомогою циклу for додайте всі парні числа від min до max
+//const max = 90;
+//const min = 33;
+
+// const min = 33;
+// const max = 90;
+// // 1
+// console.log("Task #1");
+// for (let i = max; i >= min; i -= 1) {
+//   console.log(i);
+// }
+// // 2
+// console.log("Task #2");
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 2 !== 0) {
+//     continue;
+//   }
+//   console.log(i);
+// }
+// // 3
+// console.log("Task #3");
+// let sum = 0;
+// for (let i = min; i <= max; i += 1) {
+//   if (i % 2 !== 0) {
+//     continue;
+//   }
+//   sum += i;
+// }
+// console.log(sum);
+
+// ==== #5 ====
+// Напишіть програму, щоб обертати рядок введений в propmt у зворотньому
+// напрямку При цьому потрібно залишити першу літеру на своєму місці
+
+// #1 solution (for)
+// const str = prompt("Type the sentence");
+// console.log(str);
+// let newStr = str[0];
+// console.log(`First letter ${newStr}`);
+// for (let i = str.length - 1; i >= 1; i -= 1) {
+//   let letter = str[i];
+//   newStr += letter;
+//   console.log(newStr);
+// }
+// console.log(newStr);
+
+// #2 solution (array)
+// const str = prompt("Type the sentence");
+// let newStr = str.split("");
+// let firstLetter = newStr[0];
+// newStr.push(firstLetter);
+// newStr.splice(0, 1);
+// newStr.reverse();
+// newStr = newStr.join("");
+// console.log(newStr);
+
+// ==== #6 ====
+// При завантаженні сторінки користувачеві пропонується
+// в prompt ввести число. Після введення число додається до значення
+// змінної total.
+// Операція введення числа продовжується доти,
+// поки користувач не натисне кнопку Cancel в prompt.
+// Після того як користувач припинив введення, натиснувши на
+// кнопку Cancel, показати console.log з рядком "Загальна сума введених чисел дорівнює [число]."
+// Зробити перевірку, що користувач ввів саме число,
+// а не довільний набір символів.
+
+// let total = 0;
+// let inputNumber = 0;
+
+// do {
+//   inputNumber = prompt("Type the number");
+//   switch (inputNumber) {
+//     case null:
+//       console.log("You stopped summing");
+//       break;
+//     default:
+//       let myNumber = Number(inputNumber);
+//       if (myNumber) {
+//         total += myNumber;
+//       }
+//   }
+// } while (inputNumber !== null);
+// console.log(`Загальна сума введених чисел дорівнює ${total}.`);
+
+// ==== #7 ====
+// Напишіть цикл, який пропонує ввести
+// число більше 100 через prompt.
+// Якщо користувач ввів інше число - попросити
+// ввести ще раз і так далі.
+// Цикл повинен запитувати число, поки користувач не
+// введе число більше 100, або натисне кнопку
+// Скасування в prompt
+
+// let inputNumber;
+// let userInput;
+// let controlInput;
+// do {
+//   userInput = prompt("Type the number more then 100");
+//   inputNumber = Number(userInput);
+//   if (userInput === null) {
+//     controlInput = 1;
+//   } else if (inputNumber > 100) {
+//     controlInput = 1;
+//   } else controlInput = 0;
+// } while (controlInput === 0);
+// console.log("You typed the number more then 100 or canceled");
+
+// ==== #8 ====
+// За кожен місяць податкова нараховує на ЗП розробника 5% від суми.
+// Напишіть консольну функцію, на яку користувач вводить суму зп
+// і кількість місяців з допомогою prompt() не забуваємо, що промпт повертає рядок.
+// А податкова обчислює кінцеву суму зп без податків,
+// Суму податків всього і чистий дохід розробника за кожен місяць.
+// Для обчислення суми з урахуванням відсотків використовуйте цикл for.
+
+// const grossIncome = Number(prompt("Type your gross salary"));
+// const period = Number(prompt("Type the period in months"));
+// let netIncome = 0;
+// let tax = 0;
+// for (let i = 1; i <= period; i += 1) {
+//   netIncome += grossIncome * 0.95;
+//   tax += grossIncome * 0.05;
+// }
+// console.log(
+//   `Your net salary for ${period} months is ${netIncome} and the tax is ${tax}.`
+// );
+
+// ==== #9 ====
+// Напишіть програму для перевірки чи є число простим чи ні
+
+// const inputNumber = Number(prompt("Type the number"));
+// // Для складного числа змінна дорівнює 0
+// let isPrimaryNumber = 0;
+// for (i = 2; i < inputNumber; i += 1) {
+//   if (inputNumber % 2 === 0) {
+//     console.log(
+//       `The number ${inputNumber} is divided by ${i} without a remainder`
+//     );
+//     break;
+//   } else {
+//     // Для простого числа змінна дорівнює 1
+//     isPrimaryNumber = 1;
+//   }
+// }
+// switch (isPrimaryNumber) {
+//   case 1:
+//     console.log("The number is primary");
+//     break;
+//   default:
+//     console.log("The number is not primary");
+// }
