@@ -457,27 +457,27 @@
 // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->
 
-function digitalRoot(n) {
-  let levelOfExponention = 1;
-  let digitReminder = 0;
-  let numberOfDigits = 1;
-  let numberWithoutFoundDigits = n;
-  let digitArray = [];
-  do {
-    numberOfDigits = 10 ** levelOfExponention;
-    digitReminder = numberWithoutFoundDigits % numberOfDigits;
-    digitArray.push(digitReminder / 10 ** (levelOfExponention - 1));
-    console.log(digitArray);
-    numberWithoutFoundDigits -= digitReminder;
-    levelOfExponention += 1;
-  } while (n > numberOfDigits);
-  let sum = 0;
-  for (let q = 0; q < digitArray.length; q += 1) {
-    let digit = digitArray[q];
-    sum += digit;
-  }
-  return sum;
-}
+// function digitalRoot(n) {
+//   let levelOfExponention = 1;
+//   let digitReminder = 0;
+//   let numberOfDigits = 1;
+//   let numberWithoutFoundDigits = n;
+//   let digitArray = [];
+//   do {
+//     numberOfDigits = 10 ** levelOfExponention;
+//     digitReminder = numberWithoutFoundDigits % numberOfDigits;
+//     digitArray.push(digitReminder / 10 ** (levelOfExponention - 1));
+//     console.log(digitArray);
+//     numberWithoutFoundDigits -= digitReminder;
+//     levelOfExponention += 1;
+//   } while (n > numberOfDigits);
+//   let sum = 0;
+//   for (let q = 0; q < digitArray.length; q += 1) {
+//     let digit = digitArray[q];
+//     sum += digit;
+//   }
+//   return sum;
+// }
 
-const result = digitalRoot(16);
-console.log(result);
+// const result = digitalRoot(16);
+// console.log(result);
