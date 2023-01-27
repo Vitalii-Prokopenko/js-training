@@ -481,3 +481,97 @@
 
 // const result = digitalRoot(16);
 // console.log(result);
+
+// =============
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+// function getAllPropValues(propName) {
+//   // Change code below this line
+//   let propValue = [];
+//   for (const product of products) {
+//     if (product.hasOwnProperty(propName)) {
+//       propValue.push(product[propName]);
+//     }
+//   }
+//   return propValue;
+
+//   // Change code above this line
+// }
+// console.log(getAllPropValues("price"));
+
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Change code below this line
+
+// const {
+//   yesterday: highYesterday,
+//   today: highToday,
+//   tomorrow: highTomorrow,
+//   icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+// } = highTemperatures;
+
+// // Change code above this line
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+// console.log(highIcon);
+// console.log(meanTemperature);
+
+const forecast = {
+  today: {
+    low: 28,
+    high: 32,
+    icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+  },
+  tomorrow: {
+    low: 27,
+    high: 31,
+  },
+};
+// Change code below this line
+
+// const highToday = forecast.today.high;
+// const lowToday = forecast.today.low;
+// const todayIcon = forecast.today.icon;
+
+// const highTomorrow = forecast.tomorrow.high;
+// const lowTomorrow = forecast.tomorrow.low;
+// const tomorrowIcon = forecast.tomorrow.icon;
+
+// const {
+//   today: {
+//     low: todayLow,
+//     high: todayHigh,
+//     icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+//   },
+//   tomorrow: {
+//     low: tomorrowLow,
+//     high: tomorrowHigh,
+//     icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+//   },
+// } = forecast;
+
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
+  //   let newData = {};
+
+  const {
+    text = data.text,
+    category: dataCategory,
+    priority: dataPriority,
+    completed: dataCompleted,
+  } = newData;
+  return newData;
+  // Change code above this line
+}
+console.log(makeTask("ssddd"));
