@@ -690,23 +690,145 @@ const forecast = {
 // }
 // console.log(calculateTotalPrice([1, 2, 3]));
 
-function getCommonElements(firstArray, secondArray) {
-  const commonElements = [];
-  // Change code below this line
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
 
-  // for (let i = 0; i < firstArray.length; i += 1) {
-  //   if (secondArray.includes(firstArray[i])) {
-  //     commonElements.push(firstArray[i]);
-  //   }
-  // }
+//   // for (let i = 0; i < firstArray.length; i += 1) {
+//   //   if (secondArray.includes(firstArray[i])) {
+//   //     commonElements.push(firstArray[i]);
+//   //   }
+//   // }
 
-  firstArray.forEach(function (firstArrayElement) {
-    if (secondArray.includes(firstArrayElement)) {
-      commonElements.push(firstArrayElement);
-    }
-  });
+//   firstArray.forEach(function (firstArrayElement) {
+//     if (secondArray.includes(firstArrayElement)) {
+//       commonElements.push(firstArrayElement);
+//     }
+//   });
 
-  return commonElements;
-  // Change code above this line
-}
-console.log(getCommonElements([1, 2, 3], [2, 4]));
+//   return commonElements;
+//   // Change code above this line
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Change code below this line
+
+// const booksFiltered = [...books].filter((book) => book.rating > MIN_BOOK_RATING);
+// console.table(booksFiltered);
+
+// const namesFiltered = booksFiltered.map((book) => book.author);
+// console.table(namesFiltered);
+
+// const namesSorted = namesFiltered.sort((firstName, secondName) => firstName.localeCompare(secondName));
+// console.table(namesSorted);
+
+const users = [
+  ...[
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      eyeColor: "blue",
+      friends: ["Sharron Pace"],
+      isActive: false,
+      balance: 2811,
+      gender: "male",
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      eyeColor: "blue",
+      friends: ["Briana Decker", "Sharron Pace"],
+      isActive: true,
+      balance: 3821,
+      gender: "female",
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      eyeColor: "green",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      isActive: false,
+      balance: 3793,
+      gender: "male",
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      eyeColor: "green",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      isActive: true,
+      balance: 2278,
+      gender: "female",
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      eyeColor: "blue",
+      friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+      isActive: true,
+      balance: 3951,
+      gender: "male",
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      eyeColor: "brown",
+      friends: [
+        "Jacklyn Lucas",
+        "Linda Chapman",
+        "Adrian Cross",
+        "Solomon Fokes",
+      ],
+      isActive: false,
+      balance: 1498,
+      gender: "male",
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      eyeColor: "brown",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      isActive: true,
+      balance: 2764,
+      gender: "female",
+    },
+  ],
+];
+console.table(users);
+
+const usersFilteredByGender = users.filter(user => 
+  user.gender === 'male');
+console.table(usersFilteredByGender);
+
+
+const userBalanceArray = usersFilteredByGender.map((user) => user.balance);
+console.table(userBalanceArray);
+
+     const total = userBalanceArray.reduce((previousValue, balance) => {
+       return previousValue + balance;
+     }, 0);
+console.log(total);
