@@ -575,56 +575,138 @@ const forecast = {
 // }
 // console.log(makeTask({}));
 
-const atTheOldToad = {
-  potions: [
-    { name: "Speed potion", price: 460 },
-    { name: "Dragon breath", price: 780 },
-    { name: "Stone skin", price: 520 },
-  ],
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   // Change code below this line
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     for (const potion of this.potions) {
+//       if (potion.name === newPotion.name) {
+//         return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//       }
+//     }
+//     this.potions.push(newPotion);
+//   },
+
+//   removePotion(potionName) {
+//     // const potionIndex = this.potions.indexOf(potionName);
+//     for (const potion of this.potions) {
+//       let potionIndex = this.potions.indexOf(potion);
+//       console.log(potionIndex);
+//       if (potion.name === potionName) {
+//         this.potions.splice(potionIndex, 1);
+//         return;
+//       }
+//     }
+//     return `Potion ${potionName} is not in inventory!`;
+//   },
+
+//   updatePotionName(oldName, newName) {
+//     // const potionIndex = this.potions.indexOf(oldName);
+//     for (const potion of this.potions) {
+//       let potionIndex = this.potions.indexOf(potion);
+//       console.log(potionIndex);
+//       if (potion.name === oldName) {
+//         potion.name = newName;
+//         return;
+//       }
+//     }
+//     return `Potion ${oldName} is not in inventory!`;
+//   },
+//   // Change code above this line
+// };
+// console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.addPotion({ name: "Stone skin", price: 240 }));
+// console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.removePotion("Dragonyybreath"));
+// console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
+// console.log(atTheOldToad.getPotions());
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+
+// console.log(makeMessage("Royal Grand", makePizza));
+
+// const pizzaPalace = {
+//   pizzas: ["Ultracheese", "Smoked", "Four meats"],
+//   order(pizzaName, onSuccess, onError) {
+//     console.log(this.pizzas.includes(pizzaName));
+//     if (!this.pizzas.includes(pizzaName)) {
+//       return onError(
+//         `There is no pizza with a name ${pizzaName} in the assortment.`
+//       );
+//     } else {
+//       return onSuccess(pizzaName);
+//     }
+//   },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
+
+// // Method calls with callbacks
+// console.log(pizzaPalace.order("Smoked", makePizza, onOrderError));
+// console.log(pizzaPalace.order("Four meats", makePizza, onOrderError));
+// console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError));
+// console.log(pizzaPalace.order("Vienna", makePizza, onOrderError));
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+
+//   // for (let i = 0; i < orderedItems.length; i += 1) {
+//   //   totalPrice += orderedItems[i];
+//   // }
+//   orderedItems.forEach(function (number, index) {
+//     totalPrice += number;
+//   });
+
+//   // Change code above this line
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice([1, 2, 3]));
+
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
   // Change code below this line
-  getPotions() {
-    return this.potions;
-  },
-  addPotion(newPotion) {
-    for (const potion of this.potions) {
-      if (potion.name === newPotion.name) {
-        return `Error! Potion ${newPotion.name} is already in your inventory!`;
-      }
-    }
-    this.potions.push(newPotion);
-  },
 
-  removePotion(potionName) {
-    // const potionIndex = this.potions.indexOf(potionName);
-    for (const potion of this.potions) {
-      let potionIndex = this.potions.indexOf(potion);
-      console.log(potionIndex);
-      if (potion.name === potionName) {
-        this.potions.splice(potionIndex, 1);
-        return;
-      }
-    }
-    return `Potion ${potionName} is not in inventory!`;
-  },
+  // for (let i = 0; i < firstArray.length; i += 1) {
+  //   if (secondArray.includes(firstArray[i])) {
+  //     commonElements.push(firstArray[i]);
+  //   }
+  // }
 
-  updatePotionName(oldName, newName) {
-    // const potionIndex = this.potions.indexOf(oldName);
-    for (const potion of this.potions) {
-      let potionIndex = this.potions.indexOf(potion);
-      console.log(potionIndex);
-      if (potion.name === oldName) {
-        potion.name = newName;
-        return;
-      }
+  firstArray.forEach(function (firstArrayElement) {
+    if (secondArray.includes(firstArrayElement)) {
+      commonElements.push(firstArrayElement);
     }
-    return `Potion ${oldName} is not in inventory!`;
-  },
+  });
+
+  return commonElements;
   // Change code above this line
-};
-console.log(atTheOldToad.getPotions());
-console.log(atTheOldToad.addPotion({ name: "Stone skin", price: 240 }));
-console.log(atTheOldToad.getPotions());
-console.log(atTheOldToad.removePotion("Dragonyybreath"));
-console.log(atTheOldToad.getPotions());
-console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
-console.log(atTheOldToad.getPotions());
+}
+console.log(getCommonElements([1, 2, 3], [2, 4]));
