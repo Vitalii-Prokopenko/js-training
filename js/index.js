@@ -746,89 +746,126 @@ const forecast = {
 // const namesSorted = namesFiltered.sort((firstName, secondName) => firstName.localeCompare(secondName));
 // console.table(namesSorted);
 
-const users = [
-  ...[
-    {
-      name: "Moore Hensley",
-      email: "moorehensley@indexia.com",
-      eyeColor: "blue",
-      friends: ["Sharron Pace"],
-      isActive: false,
-      balance: 2811,
-      gender: "male",
-    },
-    {
-      name: "Sharlene Bush",
-      email: "sharlenebush@tubesys.com",
-      eyeColor: "blue",
-      friends: ["Briana Decker", "Sharron Pace"],
-      isActive: true,
-      balance: 3821,
-      gender: "female",
-    },
-    {
-      name: "Ross Vazquez",
-      email: "rossvazquez@xinware.com",
-      eyeColor: "green",
-      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-      isActive: false,
-      balance: 3793,
-      gender: "male",
-    },
-    {
-      name: "Elma Head",
-      email: "elmahead@omatom.com",
-      eyeColor: "green",
-      friends: ["Goldie Gentry", "Aisha Tran"],
-      isActive: true,
-      balance: 2278,
-      gender: "female",
-    },
-    {
-      name: "Carey Barr",
-      email: "careybarr@nurali.com",
-      eyeColor: "blue",
-      friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
-      isActive: true,
-      balance: 3951,
-      gender: "male",
-    },
-    {
-      name: "Blackburn Dotson",
-      email: "blackburndotson@furnigeer.com",
-      eyeColor: "brown",
-      friends: [
-        "Jacklyn Lucas",
-        "Linda Chapman",
-        "Adrian Cross",
-        "Solomon Fokes",
-      ],
-      isActive: false,
-      balance: 1498,
-      gender: "male",
-    },
-    {
-      name: "Sheree Anthony",
-      email: "shereeanthony@kog.com",
-      eyeColor: "brown",
-      friends: ["Goldie Gentry", "Briana Decker"],
-      isActive: true,
-      balance: 2764,
-      gender: "female",
-    },
-  ],
-];
-console.table(users);
+// const users = [
+//   ...[
+//     {
+//       name: "Moore Hensley",
+//       email: "moorehensley@indexia.com",
+//       eyeColor: "blue",
+//       friends: ["Sharron Pace"],
+//       isActive: false,
+//       balance: 2811,
+//       gender: "male",
+//     },
+//     {
+//       name: "Sharlene Bush",
+//       email: "sharlenebush@tubesys.com",
+//       eyeColor: "blue",
+//       friends: ["Briana Decker", "Sharron Pace"],
+//       isActive: true,
+//       balance: 3821,
+//       gender: "female",
+//     },
+//     {
+//       name: "Ross Vazquez",
+//       email: "rossvazquez@xinware.com",
+//       eyeColor: "green",
+//       friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//       isActive: false,
+//       balance: 3793,
+//       gender: "male",
+//     },
+//     {
+//       name: "Elma Head",
+//       email: "elmahead@omatom.com",
+//       eyeColor: "green",
+//       friends: ["Goldie Gentry", "Aisha Tran"],
+//       isActive: true,
+//       balance: 2278,
+//       gender: "female",
+//     },
+//     {
+//       name: "Carey Barr",
+//       email: "careybarr@nurali.com",
+//       eyeColor: "blue",
+//       friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+//       isActive: true,
+//       balance: 3951,
+//       gender: "male",
+//     },
+//     {
+//       name: "Blackburn Dotson",
+//       email: "blackburndotson@furnigeer.com",
+//       eyeColor: "brown",
+//       friends: [
+//         "Jacklyn Lucas",
+//         "Linda Chapman",
+//         "Adrian Cross",
+//         "Solomon Fokes",
+//       ],
+//       isActive: false,
+//       balance: 1498,
+//       gender: "male",
+//     },
+//     {
+//       name: "Sheree Anthony",
+//       email: "shereeanthony@kog.com",
+//       eyeColor: "brown",
+//       friends: ["Goldie Gentry", "Briana Decker"],
+//       isActive: true,
+//       balance: 2764,
+//       gender: "female",
+//     },
+//   ],
+// ];
+// console.table(users);
 
-const usersFilteredByGender = users.filter(user => 
-  user.gender === 'male');
-console.table(usersFilteredByGender);
+// const usersFilteredByGender = users.filter(user =>
+//   user.gender === 'male');
+// console.table(usersFilteredByGender);
 
 
-const userBalanceArray = usersFilteredByGender.map((user) => user.balance);
-console.table(userBalanceArray);
+// const userBalanceArray = usersFilteredByGender.map((user) => user.balance);
+// console.table(userBalanceArray);
 
-     const total = userBalanceArray.reduce((previousValue, balance) => {
-       return previousValue + balance;
-     }, 0);
-console.log(total);
+//      const total = userBalanceArray.reduce((previousValue, balance) => {
+//        return previousValue + balance;
+//      }, 0);
+// console.log(total);
+
+
+
+// const multiplyNumeric = (menu) => {
+//   for (const key in menu) {
+//     if (typeof menu[key] === 'number') {
+//       menu[key] *= 2;
+//     }
+//   }
+// };
+
+// let menu = {
+//   width: 400,
+//   height: 200,
+//   name: "menu",
+// };
+// multiplyNumeric(menu);
+
+// console.log(menu);
+  
+const salaries = {
+  Mango: 570,
+  Poly: 900,
+  Ajax: 1470,
+}
+
+const totalSalary = (salaries) => {
+  let sum = 0;
+  const values = Object.values(salaries);
+  console.log(values);
+  for (const value of values) {
+    sum += value;
+    console.log(sum);
+  }
+  return sum;
+};
+console.log(totalSalary(salaries));
