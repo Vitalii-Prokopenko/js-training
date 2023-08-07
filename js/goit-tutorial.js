@@ -365,3 +365,71 @@ if (totalSpent > 5000) {
 console.log(
   `Оформляем заказ на сумму ${currentPayment} со скидкой ${discount}%`
 );
+
+/*
+ * Напиши функцию calculateTotalPrice(items)
+ * которая принимает массив цен (чисел) и возвращает их сумму
+ */
+
+const cart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90];
+function calculateTotalPrice(items) {
+  let totalPrice = 0;
+  for (const item of items) {
+    totalPrice += item;
+  }
+  return totalPrice;
+}
+console.log(cart);
+console.log(calculateTotalPrice(cart));
+
+/*
+ * Напиши функцию findSmallesNumber(numbers) для поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+const arrayToFindSmallest = [51, 18, 13, 24, 7, 85, 166, 19];
+console.log(numbersToFindSmallest);
+const findSmallestNumber = function (array) {
+  let smallestNumber = array[0];
+  for (const number of array) {
+    smallestNumber = number < smallestNumber ? number : smallestNumber;
+  }
+  return smallestNumber;
+};
+console.log(findSmallestNumber(arrayToFindSmallest));
+
+/*
+ * Напиши функцию add для сложения произвольного количества аргументов (чисел)
+ * - Операция ... (rest)
+ */
+function add(...args) {
+  let total = 0;
+  for (const arg of args) {
+    total += arg;
+  }
+  return total;
+}
+
+console.log(add(1, 2, 3, 4, 5));
+
+/*
+ * Напиши функцию filterNumbers(array [, number1, ...]) которая:
+ * - первым аргументом принимает массив чисел
+ * - после первого аргумента может быть произвольное количество других аргументов которые будут числами.
+ * - Функция должна вернуть новый массив, в котором будут только те аргументы, начиная со второго,
+ *   для которых есть аналог в оригинальном массиве.
+ */
+
+function filterNumbers(array, ...args) {
+  let newArray = [];
+  for (const arg of args) {
+    if (array.includes(arg)) {
+      newArray.push(arg);
+    }
+  }
+  return newArray;
+}
+
+console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8)); // [2, 3]
+console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); // [30, 15]
+console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64)); // [200]
