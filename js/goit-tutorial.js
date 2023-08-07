@@ -433,3 +433,202 @@ function filterNumbers(array, ...args) {
 console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8)); // [2, 3]
 console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); // [30, 15]
 console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64)); // [200]
+
+/*
+ * Контекст (this)
+ *    - Где и как была объявлена функция НЕ ИМЕЕТ НИКАКОГО ВЛИЯНИЯ на контекст.
+ *    - Контекст определяется В МОМЕНТ ВЫЗОВА ФУНКЦИИ, если он не привязан явно.
+ */
+
+/*
+ * Как метод объекта. В контексте объекта.
+ */
+
+const user = {
+  tag: "Mango",
+  showTag() {
+    console.log("showTag -> this", this);
+  },
+};
+
+user.showTag();//user
+
+/*
+ * Вызов без контекста
+ * - В строгом режиме = undefined
+ * - Не в строгом режиме = window
+ */
+
+const foo = function () {
+  console.log("foo -> this", this);
+};
+
+foo(); //window
+
+/*
+ * Как метод объекта, но объявлена как внешняя функция.
+ * В контексте объекта.
+ */
+// функція заявлена як зовнішня, тобто не у складі об'єкту
+const showTag = function () {
+    console.log('showTag -> this', this);
+    console.log('showTag -> this.tag', this.tag);
+};
+// функція викликана без прив'язки до об'єкту
+showTag();//window, undefined
+
+const user2 = {
+    tag: 'Mango',
+};
+// створено метод об'єкту, якому як значення присвоєно зовнішню функцію
+user2.showUserTag = showTag;
+
+console.log('user2', user2); 
+user2.showUserTag();
+// this підтягує дані по об'єкту user2
+
+/*
+ * Вызов без контекста, но объявлена как метод объекта.
+ */
+
+const user3 = {
+    tag: 'Mango',
+    showTag() {
+        console.log('showTag -> this', this);
+        console.log('showTag -> this.tag', this.tag);
+    },
+};
+
+user3.showTag();
+// user3
+
+const outerShowTag = user3.showTag;
+
+outerShowTag();
+// window, undefined
+
+
+/*
+ * Контекст в callback-функциях
+ */
+
+const user4 = {
+    tag: 'Mango',
+    showTag() {
+        console.log('showTag -> this', this);
+        console.log('showTag -> this.tag', this.tag);
+    },
+};
+
+const invokeAction = function (action) {
+    console.log(action);
+
+    action();
+};
+
+invokeAction(user4.showTag);
+// window, undefined
+
+/*
+ * Тренируемся 1
+ */
+
+const fn = function () {
+    console.log('fn -> this', this);
+};
+
+fn(); // Какой this ??? window
+
+/*
+ * Тренируемся 2
+ */
+
+const book = {
+    title: 'React for beginners',
+    showThis() {
+        console.log('showThis -> this', this);
+    },
+    showTitle() {
+        console.log('showTitle -> this.title', this.title);
+    },
+};
+
+book.showThis(); // Какой this ??? book
+
+const outerShowThis = book.showThis;
+outerShowThis(); // Какой this ??? window
+
+const outerShowTitle = book.showTitle;
+outerShowTitle(); // Какой this ??? undefined
+
+/*
+ * Тренируемся 3
+ */
+
+const makeChangeColor = function () {
+    const changeColor = function (color) {
+        console.log('changeColor -> this', this);
+        this.color = color;
+    };
+
+    changeColor(); // Какой this ??? undefined
+
+    const sweater = {
+        color: 'teal',
+    };
+
+    sweater.updateColor = changeColor;
+
+    // sweater.updateColor('red'); // Какой this ???
+
+    return sweater.updateColor;
+};
+
+const swapColor = makeChangeColor();
+
+swapColor('blue'); // Какой this ???
+
+/*
+ * Тренируемся 4
+ */
+
+const makeChangeColor2 = function () {
+    const changeColor = function (color) {
+        console.log('changeColor -> this', this);
+    };
+
+    return changeColor;
+};
+
+const updateColor = makeChangeColor2();
+updateColor('yellow'); // Какой this ??? window
+
+const hat = {
+    color: 'blue',
+    updateColor: updateColor,
+};
+
+hat.updateColor('orange'); // Какой this ??? hat
+
+/*
+ * Тренируемся 5
+ */
+
+const counter = {
+  value: 0,
+  increment(value) {
+      console.log('increment -> this', this);
+      this.value += value;
+  },
+  decrement(value) {
+      console.log('decrement -> this', this);
+      this.value -= value;
+  },
+};
+
+const updateCounter = function (value, operation) {
+  operation(value);
+};
+
+updateCounter(10, counter.increment);
+updateCounter(5, counter.decrement);
